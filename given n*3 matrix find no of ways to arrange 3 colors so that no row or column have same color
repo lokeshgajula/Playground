@@ -1,0 +1,36 @@
+Question :
+you need to print an nx3 grid in red, green, blue such that no row or colomn contains cells that are all the same color. Determine the number of valid patterns that can be painted 
+given n rows.
+ex :
+n=4;
+for 4x3 grid , the total number of valid patterns is 296490.
+
+R G R       G B G     G B G     G B G 
+G B G       R G R     G B G     G B G
+G B G       G B G     R G R     G B G
+G B G       G B G     G B G     R G R
+
+
+
+code:
+#include<stdio.h>
+#include<stdlib.h>
+int pow(int a,int b)
+{
+    int res=1;
+    while(b>0)
+    {
+        res=res*a;
+        b--;
+    }
+    return res;
+}
+int main()
+{
+
+    int n;
+    scanf("%d",&n);
+    int res;
+    res=18*pow(3,n)+pow(24,n)-9*pow(8,n)+9*pow(2,n)-24;
+    printf("%d",res);
+}
